@@ -1,0 +1,26 @@
+ <h1>User info</h1>
+
+  <%# <%= image_tag current_user.get_profile_image(100,100) %> 
+  
+  <h4>Name</h4>
+  <%= current_user.name %>
+  
+  <h4>Introduction</h4>
+  <%= current_user.introduction %>
+  
+  
+ 
+ 
+ <h3><strong>New book</strong></h3>
+<table>
+<%= form_with model: @book do |f| %>
+
+  <tr><p>Title</p></tr>
+  <tr><%= f.text_field :title %></tr>
+  <tr><p>Body</p></tr>
+  <tr><%= f.text_area :body %></tr>
+  
+  <tr><td><%= f.submit 'Create Book' %></td></tr>
+  
+<% end %>
+</table>
