@@ -1,0 +1,30 @@
+ <div class ="raw">
+     
+  <div class="col-xs-3">
+    <h2>User info</h2>
+     <%= render 'users/userprofile', user: current_user %>
+    <h2><strong>New book</strong></h2>
+     <%= render 'books/newbook', book: @book %>
+  </div>
+
+   <div class="col-xs-9">
+      <table class="table user-index">
+      <h2>Users</h2>
+    <thead>
+    <tr>
+    <th>image</th>
+    <th>name</th>
+    <th></th>
+    <th colspan="3"></th>
+   </tr>
+  <tr>
+      <% @users.each do |user| %>
+     <th><p><%= image_tag user.get_profile_image(100,100) %></p></th>
+      <th><%= user.name %></th>
+      <th><%= link_to "Show", user_path(user.id) %></th>
+     </tr>
+     <% end %>
+    </thead>
+      </table>
+     </div>
+ </div>

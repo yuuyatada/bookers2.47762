@@ -1,26 +1,25 @@
  <h1>User info</h1>
+<%= render 'users/userprofile', user: current_user %>
 
-  <%# <%= image_tag current_user.get_profile_image(100,100) %> 
-  
-  <h4>Name</h4>
-  <%= current_user.name %>
-  
-  <h4>Introduction</h4>
-  <%= current_user.introduction %>
-  
-  
- 
- 
+
  <h3><strong>New book</strong></h3>
-<table>
-<%= form_with model: @book do |f| %>
+<%= render 'books/newbook', book: @book %>
 
-  <tr><p>Title</p></tr>
-  <tr><%= f.text_field :title %></tr>
-  <tr><p>Body</p></tr>
-  <tr><%= f.text_area :body %></tr>
-  
-  <tr><td><%= f.submit 'Create Book' %></td></tr>
-  
-<% end %>
+<h2>Books</h2>
+<table>
+ <thead>
+  <tr>
+   <th></th>
+   <th>Title</th>
+   <th>Opinion</th>
+   <th colspan="3"></th>
+  </tr>
+  <tr>
+   <% @books.each do |book| %>
+   <th><p><%= image_tag book.user.get_profile_image(100,100) %></p></th>
+   <th><%= book.title %></th>
+   <th><%= book.body %></th>
+  </tr>
+  <% end %>
+ </thead>
 </table>

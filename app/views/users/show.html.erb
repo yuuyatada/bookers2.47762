@@ -1,0 +1,23 @@
+<h1>User info</h1>
+<%= render 'users/userprofile', user: current_user %>
+
+
+ <h3><strong>New book</strong></h3>
+<%= render 'books/newbook', book: @book %>
+
+<h2>Books</h2>
+<table>
+ <thead>
+  <tr>
+   <th></th>
+   <th>Title</th>
+   <th>Opinion</th>
+  </tr>
+  <tr>
+   <th><%= image_tag current_user.get_profile_image(100,100) %></th>
+   <th><%= link_to 'test' ,book_path %> </th>
+   <th>Opinion message</th>
+  </tr>
+ </thead>
+</table>
+

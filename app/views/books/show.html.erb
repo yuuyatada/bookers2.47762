@@ -1,1 +1,22 @@
-<p><a href="/books">Back</a></p>
+<h1>User info</h1>
+<%= render 'users/userprofile', user: current_user %>
+
+
+ <h3><strong>New book</strong></h3>
+<%= render 'books/newbook', book: @book %>
+
+
+<table>
+<tr><td><h2>Book detail</h2></td></tr>
+    
+ <thead>
+  <tr class="book1">
+      <p><%= image_tag @user.get_profile_image(100,100) %></p>
+      <th><%= @user.name %></th>
+    <th><%= @book.title %></th>
+    <th><%= @book.body %></th>
+    <th><%= link_to "Edit", edit_book_path %></th>
+    <th><%= link_to "Destroy", books_path, method: :delete, "data-confirm" => "本当に消しますか？" %></th>
+  </tr>
+ </thead>
+</table>
