@@ -1,13 +1,20 @@
- <div class ="raw">
+ <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_pack_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+ <div class="container">
+ <div class ="raw justify-content-start">
      
-  <div class="col-xs-3">
+  <div class="col-md-4">
     <h2>User info</h2>
      <%= render 'users/userprofile', user: current_user %>
     <h2><strong>New book</strong></h2>
      <%= render 'books/newbook', book: @book %>
   </div>
 
-   <div class="col-xs-9">
+   <div class="col-md-8">
       <table class="table user-index">
       <h2>Users</h2>
     <thead>
@@ -26,4 +33,6 @@
     </thead>
       </table>
      </div>
+     
+ </div>
  </div>
