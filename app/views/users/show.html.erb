@@ -1,13 +1,27 @@
+<meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_pack_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    
+ <div class="container">
+ <div class ="row">
+ 
+ <div class="col-md-4">
+  <%= flash[:notic] %>
+  
 <h1>User info</h1>
 <%= render 'users/userprofile', user: current_user %>
 
 
  <h3><strong>New book</strong></h3>
 <%= render 'books/newbook', book: @book %>
-
-<h2>Books</h2>
+</div>
+<div class="col-md-8">
 <table>
  <thead>
+<h2>Books</h2>
   <tr>
    <th></th>
    <th>Title</th>
@@ -23,4 +37,6 @@
   <% end %>
  </thead>
 </table>
-
+</div>
+</div>
+</div>

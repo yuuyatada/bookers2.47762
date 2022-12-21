@@ -3,8 +3,8 @@
   <head>
     <title>Bookers2</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <%= csrf_meta_tags %>
-    <%= csp_meta_tag %>
+    
+    <%= csp_meta_tag %><%= csrf_meta_tags %>
 
     <%= stylesheet_pack_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
@@ -34,15 +34,16 @@
         </nav>
 
       </div>
-    
-    
-    <div class="container">
-      <p id="notice"><%= notice %></p> 
   </header>
-    
-    <%= yield %>
+    <div class="container">
+    <div class ="row">
+      <p id="notice"><%= notice %></p> 
+      </div>
+      </div>
+    <%= yield %> 
+    </body>
      <footer>
       <p class="text-center"> CopyRight Infratop.inc</p>
      </footer>
-  </body>
+ 
 </html>

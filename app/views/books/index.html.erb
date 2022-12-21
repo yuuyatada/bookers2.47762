@@ -1,13 +1,38 @@
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_pack_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    
+ <div class="container">
+   <% if @book.errors.any? %>
+ <strong><%= @book.errors.count %>errors prohibited this obj from being saved:</strong>
+  <ul>
+    <% @book.errors.full_messages.each do |message| %>
+      <li><%= message %></li>
+    <% end %>
+  </ul>
+<% end %>
+ <div class ="row">
+ <div class="col-3">
+  
+ 
+
  <h1>User info</h1>
 <%= render 'users/userprofile', user: current_user %>
 
 
  <h3><strong>New book</strong></h3>
 <%= render 'books/newbook', book: @book %>
+</div>
 
-<h2>Books</h2>
-<table>
+<div class="col-md-9">
+
+
+<table class="table book-index">
  <thead>
+  <tr><h2>Books</h2></tr>
   <tr>
    <th></th>
    <th>Title</th>
@@ -23,3 +48,7 @@
   <% end %>
  </thead>
 </table>
+</div>
+</div>
+</div>
+
