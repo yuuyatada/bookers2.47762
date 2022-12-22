@@ -1,4 +1,10 @@
 @import '~bootstrap/scss/bootstrap';
 @import '~@fortawesome/fontawesome-free/scss/fontawesome';
+ a {
+ color: white;
+}
 
+a:hover{
+　text-decoration: underline;
+}
 
