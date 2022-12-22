@@ -11,7 +11,7 @@
  <%= flash[:created] %>
   <%= flash[:non] %>
 <h1>User info</h1>
-<%= render 'users/userprofile', user: current_user %>
+<%= render 'users/userprofile', user: @user %>
 
 
  <h3><strong>New book</strong></h3>
@@ -25,7 +25,7 @@
 
   <tr class="book1">
       <th><p><%= image_tag @user.get_profile_image(80,80) %></p>
-      <%=link_to @user.name,user_path %></th>
+      <%=link_to @user.name,user_path(@user.id) %></th>
     <th><%= @book.title %></th>
     <th><%= @book.body %></th>
     <% if @book.user == current_user %>
