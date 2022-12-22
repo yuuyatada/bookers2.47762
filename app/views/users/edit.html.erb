@@ -1,3 +1,16 @@
+ <meta charset="UTF-8">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <%= stylesheet_pack_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+
+
+<div class="container">
+  <div class="row">
+	<div class="mx-auto col-11 col-sm-10 col-lg-8 col-xl-6">
+ 
+ 
  <% if current_user.errors.any? %>
  <strong><%= current_user.errors.count %>errors prohibited this obj from being saved:</strong>
   <ul>
@@ -19,24 +32,29 @@
 		<% end %>
 	</ul>
 <% end %>
+<div class="mb-3">
+	 <div class="form-group">
+	<label>Name</label>
+	<tr><%= f.text_field :name, class: "col-12 name" %></tr>
+</div></div>
 
-<div class="field">
-	<%= f.label :name %>
-	<%= f.text_field :name, class: "name" %>
-</div>
-
-<div class="field">
-	<%= f.label :image %>
+<div class="mb-3">
+	 <div class="form-group">
+	<label>Image</label>
 	<%= f.file_field :profile_image, class: "image" %>
+</div></div>
 
-
-<div class="field">
-	<%= f.label :introduction %>
-	<%= f.text_area :introduction, class: "introduction" %>
-</div>
+<div class="mb-3">
+	 <div class="form-group">
+		<label>Introduction</label>
+	<%= f.text_area :introduction, class: "col-12 introduction" %>
+</div></div>
 
 <div class="actions">
-	<%= f.submit %>
+	<%= f.submit class: "btn btn-secondary" %>
 </div>
 
 <% end %>
+</div>
+</div>
+</div>
