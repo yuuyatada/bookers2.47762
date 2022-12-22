@@ -4,17 +4,17 @@
 
     <%= stylesheet_pack_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
- <div class="container">
+ <div class="container px-5 px-sm-0">
  <div class ="row">
      
-  <div class="col-md-4">
+  <div class="col-md-3">
     <h2>User info</h2>
      <%= render 'users/userprofile', user: current_user %>
     <h2><strong>New book</strong></h2>
      <%= render 'books/newbook', book: @book %>
   </div>
 
-   <div class="col-md-8">
+   <div class="col-md-8 offset-md-1">
       <table class="table user-index">
       <thead>
       <h2>Users</h2>
@@ -25,9 +25,9 @@
    </tr>
   <tr>
       <% @users.each do |user| %>
-     <th><p><%= image_tag user.get_profile_image(100,100) %></p></th>
-      <th><%= user.name %></th>
-      <th><%= link_to "Show", user_path(user.id) %></th>
+     <td><p><%= image_tag user.get_profile_image(100,100) %></p></td>
+      <td><%= user.name %></td>
+      <td><%= link_to "Show", user_path(user.id) %></td>
      </tr>
      <% end %>
     </thead>

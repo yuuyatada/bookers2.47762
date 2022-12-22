@@ -1,18 +1,23 @@
-<table>
+
+
+<table class="table">
+	
 <%= form_with model: Book.new do |f| %>
 
-	<div class="field row">
-		<tr><%= f.label :title %></tr>
-		<tr><%= f.text_field :title, class: "col-xs-12 book_title" %></tr>
-	</div>
-
-	<div class="field row">
-		<tr><%= f.label :body %> </tr>
-		<tr><%= f.text_area :body, class: "col-xs-12 book_body" %></tr>
-	</div>
-
-	<div class="actions row">
-	<tr>	<%= f.submit class: "btn btn-primary col-xs-12" %></tr>
+   	<div class="mb-3">
+	 <div class="form-group">
+	  <label>Title</label>
+	<tr><%= f.text_field :title, class: "col-12 book_title" %></tr>
+	 </div>
+	  </div>
+<div class="mb-3">
+	 <div class="form-group">
+	 <label>Opinion</label>
+	<tr><%= f.text_area :body, class: "col-12 book_body" %></tr>
+	 </div>
+ </div>
+	<div class="form-group">
+	<tr>	<%= f.submit class: "btn btn-success" %></tr>
 	</div>
 <% end %>
 

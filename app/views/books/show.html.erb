@@ -20,20 +20,20 @@
 
 <div class="col-md-8">
 <table class="table book-show"> 
-    <thead>
+    
 <tr><h2>Book detail</h2></tr>
 
   <tr class="book1">
-      <th><p><%= image_tag @user.get_profile_image(100,100) %></p>
+      <th><p><%= image_tag @user.get_profile_image(80,80) %></p>
       <%=link_to @user.name,user_path %></th>
     <th><%= @book.title %></th>
     <th><%= @book.body %></th>
     <% if @book.user == current_user %>
-    <th><%= link_to "Edit", edit_book_path %></th>
-    <th><%= link_to "Destroy", book_path(@book.id), method: :delete, "data-confirm" => "本当に消しますか？" %></th>
+    <th><%= link_to "Edit", edit_book_path,class:"bbtn btn-success btn-sm " %></th>
+    <th><%= link_to "Destroy", book_path(@book.id),class:"bbtn btn-danger btn-sm ", method: :delete, "data-confirm" => "本当に消しますか？" %></th>
      <% end %>
   </tr>
-  <thead>
+  
 </table>
 </div>
 </div>

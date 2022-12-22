@@ -5,7 +5,7 @@
     <%= stylesheet_pack_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
     
- <div class="container">
+ 
    <% if @book.errors.any? %>
  <strong><%= @book.errors.count %>errors prohibited this obj from being saved:</strong>
   <ul>
@@ -14,6 +14,7 @@
     <% end %>
   </ul>
 <% end %>
+<div class="container  px-5 px-sm-0">
  <div class ="row">
  <div class="col-3">
   
@@ -27,12 +28,11 @@
 <%= render 'books/newbook', book: @book %>
 </div>
 
-<div class="col-md-9">
-
+<div class="col-md-8 offset-md-1">
 
 <table class="table book-index">
  <thead>
-  <tr><h2>Books</h2></tr>
+<h2>Books</h2>
   <tr>
    <th></th>
    <th>Title</th>
@@ -41,9 +41,9 @@
   </tr>
   <tr>
    <% @books.each do |book| %>
-   <th><p><%= image_tag book.user.get_profile_image(100,100) %></p></th>
-   <th><%=link_to book.title,book %></th>
-   <th><%= book.body %></th>
+   <td><p><%= image_tag book.user.get_profile_image(80,80) %></p></td>
+   <td><%=link_to book.title,book %></td>
+   <td><%= book.body %></td>
   </tr>
   <% end %>
  </thead>
