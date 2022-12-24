@@ -1,13 +1,6 @@
-
-    <%= csrf_meta_tags %>
-    <%= csp_meta_tag %>
-
-    <%= stylesheet_pack_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
-    
  <div class="container  px-5 px-sm-0">
  <div class ="row">
- <div class="col-3">
+ <div class="col-md-3">
   <%= flash[:notic] %>
   
 <h1>User info</h1>
@@ -30,7 +23,8 @@
   </tr>
   <tr>
    <% @books.each do |book| %>
-   <td><p><%= image_tag book.user.get_profile_image(80,80) %></p></td>
+   <td><p><%= link_to (image_tag book.user.get_profile_image(80,80)), user_path(book.user) %>
+   </p></td>
    <td><%=link_to book.title,book %></td>
    <td><%= book.body %></td>
   </tr>
